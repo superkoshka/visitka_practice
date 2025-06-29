@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="flower-container"></div>
+    <script>
+    function createFlower() {
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.left = Math.random() * 100 + 'vw'; // Случайное положение по горизонтали
+        flower.style.animationDuration = Math.random() * 3 + 2 + 's'; // Случайная продолжительность анимации
+        document.querySelector('.flower-container').appendChild(flower);
+
+        // Удалить цветочек после завершения анимации
+        setTimeout(() => {
+            flower.remove();
+        }, 5000);
+    }
+
+    // Создавать новые цветочки каждые 500 миллисекунд
+    setInterval(createFlower, 500);
+</script>
+
+    <div class="container">
+        <header>
+            <h1>Дарья Кошкина</h1>
+            <p>Обнимательница деревьв</p>
+        </header>
+        <main>
+            <div class="photo-container">
+    <img src="photo1.jpg" alt="Фото слева" class="left-photo">
+    <img src="photo2.jpg" alt="Фото справа" class="right-photo">
+</div>
+
+            <section class="about">
+                <h2>Обо мне</h2>
+                <p>Люблю урбанистику, котиков и трамваи</p>
+            </section>
+            <section class="contacts">
+                <h2>Контакты</h2>
+                <p>Email: <a href="mailto:gatsundaria@yandex.ru">gatsundaria@yandex.ru</a></p>
+                <p>Телефон: +7 (981) 811-10-39</p>
+                <p>Социальные сети: <a href="https://vk.com" target="_blank">ВКонтакте</a>, <a href="https://instagram.com" target="_blank">Instagram</a></p>
+            </section>
+        </main>
+        <footer>
+            <p>Всем кискам пис!</p>
+        </footer>
+    </div>
+</body>
+</html>

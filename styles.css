@@ -1,0 +1,115 @@
+/* Общий стиль */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Контейнер */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Чтобы цветочки не мешали кликам по странице */
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    width: 30px; /* Размер цветочка */
+    height: 30px;
+    background-image: url('flower.png'); /* Замени на путь к изображению цветочка */
+    background-size: cover;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.photo-container {
+    display: flex; /* Устанавливает блочный макет */
+    justify-content: space-between; /* Размещает фотографии по краям */
+    align-items: center; /* Выравнивает по вертикали */
+    margin-top: 20px;
+}
+.left-photo, .right-photo {
+    width: 45%; /* Устанавливаем ширину каждой фотографии на 30% от ширины контейнера */
+    max-width: 400px; /* Ограничиваем максимальную ширину фотографий */
+}    
+
+/* Заголовок */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Разделы */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Контакты */
+.contacts a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 20px;
+}
